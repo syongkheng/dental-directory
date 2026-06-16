@@ -1,0 +1,29 @@
+.placeholder-image {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.placeholder-image-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--color-primary-subtle), var(--color-surface-alt));
+  border: 1px dashed var(--color-border);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 24px;
+
+  & svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-primary);
+  }
+
+  & span {
+    font-size: 13px;
+    max-width: 220px;
+  }
+}

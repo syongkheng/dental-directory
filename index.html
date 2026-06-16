@@ -4,7 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dental-directory</title>
+    <meta
+      name="description"
+      content="Patrick Dental Ceramic Arts (PDCA) — a Singapore dental laboratory crafting precision crowns, bridges, veneers, and implants for dental clinics since 2004."
+    />
+    <title>Patrick Dental Ceramic Arts | Dental Laboratory, Singapore</title>
+    <script>
+      // Set the theme before paint to avoid a flash of the wrong theme.
+      ;(function () {
+        try {
+          var stored = window.localStorage.getItem('pdca-theme')
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+          document.documentElement.dataset.theme = theme
+        } catch (e) {
+          /* localStorage unavailable — CSS media-query fallback still applies */
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

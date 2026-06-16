@@ -1,0 +1,62 @@
+/*
+ * Design tokens — the single place to rebrand this site.
+ * Edit the hex values below (light + dark blocks) to change the palette
+ * everywhere; every component reads colors from these custom properties.
+ *
+ * Primary (#f06522) and accent (#b3aaa5) are taken directly from the PDCA logo.
+ */
+:root,
+:root[data-theme='light'] {
+  --color-primary: #f06522;
+  --color-primary-hover: #d6541b;
+  --color-primary-subtle: #fdeae0;
+  --color-accent: #b3aaa5;
+  --color-accent-hover: #9c9189;
+  --color-bg: #ffffff;
+  --color-surface: #f7f5f4;
+  --color-surface-alt: #efebe9;
+  --color-text: #211d1b;
+  --color-text-muted: #7d7570;
+  --color-border: #e2dcd9;
+  --color-shadow: rgba(34, 24, 18, 0.08);
+  --color-on-primary: #ffffff;
+  --color-on-accent: #2a2422;
+}
+
+:root[data-theme='dark'] {
+  --color-primary: #ff7d3f;
+  --color-primary-hover: #ffa066;
+  --color-primary-subtle: rgba(240, 101, 34, 0.15);
+  --color-accent: #c9c2bd;
+  --color-accent-hover: #e0dad6;
+  --color-bg: #15120f;
+  --color-surface: #1c1814;
+  --color-surface-alt: #241f1a;
+  --color-text: #f5f1ee;
+  --color-text-muted: #b3aaa5;
+  --color-border: #2f2922;
+  --color-shadow: rgba(0, 0, 0, 0.45);
+  --color-on-primary: #2a1106;
+  --color-on-accent: #211d1b;
+}
+
+/* Pre-hydration / no-JS fallback: honor OS preference until the
+   ThemeProvider sets data-theme explicitly. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-primary: #ff7d3f;
+    --color-primary-hover: #ffa066;
+    --color-primary-subtle: rgba(240, 101, 34, 0.15);
+    --color-accent: #c9c2bd;
+    --color-accent-hover: #e0dad6;
+    --color-bg: #15120f;
+    --color-surface: #1c1814;
+    --color-surface-alt: #241f1a;
+    --color-text: #f5f1ee;
+    --color-text-muted: #b3aaa5;
+    --color-border: #2f2922;
+    --color-shadow: rgba(0, 0, 0, 0.45);
+    --color-on-primary: #2a1106;
+    --color-on-accent: #211d1b;
+  }
+}

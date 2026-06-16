@@ -1,0 +1,15 @@
+.section {
+  padding: 72px 0;
+
+  @media (max-width: 768px) {
+    padding: 48px 0;
+  }
+}
+
+.section-base {
+  background: var(--color-bg);
+}
+
+.section-alt {
+  background: var(--color-surface);
+}
