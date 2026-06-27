@@ -1,7 +1,59 @@
-.page-intro {
-  max-width: 640px;
+/* ── SERVICES HERO ── */
+.services-hero {
+  padding: 40px 0 8px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, var(--color-primary-subtle), transparent 70%);
+    pointer-events: none;
+    border-radius: 16px;
+  }
 }
 
+.services-hero-inner {
+  position: relative;
+  max-width: 680px;
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+}
+
+.services-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.services-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  box-shadow: 0 2px 8px var(--color-shadow);
+
+  & svg {
+    color: var(--color-primary);
+  }
+}
+
+/* ── SERVICE DETAIL GRID ── */
 .services-detail-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -12,6 +64,7 @@
   }
 }
 
+/* ── STUDIO HIGHLIGHT ── */
 .studio-highlight {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -30,7 +83,30 @@
   margin-top: 20px;
 }
 
-.services-note {
+.service-turnaround {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.services-enquiry {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 14px;
+
+  & h2 {
+    margin-bottom: 12px;
+  }
+
+  & p {
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+  }
+}
+
+.services-enquiry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
 }

@@ -8,6 +8,7 @@ export interface ServiceItem {
   icon: (props: IconProps) => ReactElement
   summary: string
   description: string
+  turnaround: string
 }
 
 export const SERVICES: ServiceItem[] = [
@@ -17,7 +18,8 @@ export const SERVICES: ServiceItem[] = [
     icon: Crown,
     summary: 'Full-coverage restorations matched to natural tooth shade and bite.',
     description:
-      'Custom-milled and layered crowns built to restore strength and a natural appearance, with shade matched in our dedicated studio for a seamless fit alongside your patient’s existing teeth.',
+      "Custom-milled and layered crowns built to restore strength and a natural appearance, with shade matched in our dedicated studio for a seamless fit alongside your patient's existing teeth.",
+    turnaround: '5–7 working days',
   },
   {
     slug: 'bridges',
@@ -26,6 +28,7 @@ export const SERVICES: ServiceItem[] = [
     summary: 'Multi-unit restorations that close gaps with a precise, comfortable fit.',
     description:
       'Engineered for accurate margins and long-term stability, our bridges are fabricated to fit first time, every time — reducing chair-side adjustments and remakes.',
+    turnaround: '7–10 working days',
   },
   {
     slug: 'veneers',
@@ -33,7 +36,8 @@ export const SERVICES: ServiceItem[] = [
     icon: Veneer,
     summary: 'Thin, lifelike layers for aesthetic cases that demand precision.',
     description:
-      'Hand-finished veneers crafted with attention to translucency and texture, designed in collaboration with you to meet each patient’s aesthetic goals.',
+      "Hand-finished veneers crafted with attention to translucency and texture, designed in collaboration with you to meet each patient's aesthetic goals.",
+    turnaround: '7–10 working days',
   },
   {
     slug: 'implants',
@@ -42,5 +46,6 @@ export const SERVICES: ServiceItem[] = [
     summary: 'Implant-supported restorations built to exacting clinical tolerances.',
     description:
       'From single-unit crowns to full-arch restorations, our implant work is produced to precise specifications in partnership with your treatment plan.',
+    turnaround: '10–14 working days',
   },
 ]

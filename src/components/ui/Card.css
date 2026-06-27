@@ -1,14 +1,17 @@
 .card {
+  position: relative;
+  overflow: hidden;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 28px;
   box-shadow: 0 6px 16px var(--color-shadow);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px var(--color-shadow);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px var(--color-shadow);
+    background: var(--color-primary-subtle);
   }
 
   h3 {
@@ -16,23 +19,47 @@
   }
 }
 
+.card-watermark {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 108px;
+  height: 108px;
+  opacity: 0.04;
+  pointer-events: none;
+  color: var(--color-primary);
+
+  & svg {
+    width: 108px;
+    height: 108px;
+  }
+}
+
 .card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-primary-subtle);
   color: var(--color-primary);
   margin-bottom: 16px;
+  transition: background 0.18s ease;
 
   & svg {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
+}
+
+.card:hover .card-icon {
+  background: color-mix(in srgb, var(--color-primary) 18%, transparent);
 }
 
 .card-footer {
   margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
 }

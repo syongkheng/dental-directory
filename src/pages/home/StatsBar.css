@@ -1,9 +1,38 @@
 .stats-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px var(--color-shadow);
+
+  & .stat-card {
+    border-left: none;
+    background: var(--color-bg);
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--color-border);
+    }
+
+    &:first-child {
+      border-left: 4px solid var(--color-primary);
+    }
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+
+    & .stat-card:not(:last-child) {
+      border-right: none;
+    }
+
+    & .stat-card:nth-child(odd) {
+      border-right: 1px solid var(--color-border);
+    }
+
+    & .stat-card:nth-child(-n+2) {
+      border-bottom: 1px solid var(--color-border);
+    }
   }
 }

@@ -24,7 +24,7 @@ export function Footer() {
           </div>
           <p>
             Precision ceramic dental restorations — crowns, bridges, veneers
-            and implants — crafted for dentists across Singapore and Jakarta
+            and implants — crafted for dentists across Singapore
             since 2004.
           </p>
         </div>
@@ -75,7 +75,7 @@ export function Footer() {
         <span>
           &copy; {year} {COMPANY_NAME} Pte Ltd. All rights reserved.
         </span>
-        <span>Singapore &middot; Jakarta</span>
+        <span>Singapore</span>
       </div>
     </footer>
   )

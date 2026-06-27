@@ -7,8 +7,12 @@ export function ServicesOverview() {
   return (
     <div>
       <div className="section-heading">
-        <h2>What we craft</h2>
-        <p>Four core restoration types, produced to fit first time.</p>
+        <h2>Dental restorations we craft in Singapore</h2>
+        <p>
+          Four core ceramic dental restoration types — crowns, bridges,
+          veneers and implants — produced to fit first time, every time.
+        </p>
+        <div className="section-heading-rule" aria-hidden="true" />
       </div>
       <div className="services-grid">
         {SERVICES.map((service) => (
@@ -16,6 +20,7 @@ export function ServicesOverview() {
             key={service.slug}
             icon={<service.icon />}
             title={service.title}
+            watermark={<service.icon />}
             footer={<Link to="/services">Learn more &rarr;</Link>}
           >
             <p>{service.summary}</p>

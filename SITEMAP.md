@@ -10,7 +10,7 @@ URL convention: lowercase, kebab-case, no trailing slash.
 | --- | --- | --- |
 | `/` | Home | Landing page — primary conversion entry point (hero CTA, stats, services overview, process, facility highlight, closing CTA banner). |
 | `/services` | Services | Overview of crowns, bridges, veneers, implants, and the shade-taking studio. Drives "Discuss Your Case" conversions. |
-| `/about` | About | Company story (founded 2004), mission, Singapore + Jakarta presence. Builds trust ahead of conversion. |
+| `/about` | About | Company story (founded 2004), mission, Singapore presence. Builds trust ahead of conversion. |
 | `/contact` | Contact | Address, phone/WhatsApp/email, and a quote-request form. Primary form-based conversion point. |
 | `*` | Not Found | Catch-all 404 with a link back to Home. |
 
@@ -21,7 +21,6 @@ URL convention: lowercase, kebab-case, no trailing slash.
 - **`/careers`** — staff listings; PDCA has ~11–50 employees and an active hiring presence (seen on MyCareersFuture).
 - **`/blog`** or **`/insights`** — technical articles for dentists (shade-matching tips, material comparisons); SEO play.
 - **`/faq`** — common questions from clinics about submission, turnaround, and remakes.
-- **`/locations`** — dedicated page for the Jakarta lab, once it has distinct content from the Singapore operation.
 
 ## Notes
 

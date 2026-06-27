@@ -5,8 +5,10 @@ import { Services } from './pages/Services'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { NotFound } from './pages/NotFound'
+import { usePageTracking } from './analytics/usePageTracking'
 
 function App() {
+  usePageTracking()
   return (
     <Routes>
       <Route element={<Layout />}>

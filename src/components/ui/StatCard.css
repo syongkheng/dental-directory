@@ -4,7 +4,25 @@
   align-items: center;
   text-align: center;
   gap: 4px;
-  padding: 16px;
+  padding: 24px 16px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  margin-bottom: 8px;
+
+  & svg {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 .stat-value {
@@ -12,9 +30,11 @@
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: -0.5px;
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-muted);
+  margin-top: 2px;
 }

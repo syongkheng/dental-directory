@@ -4,6 +4,14 @@
   margin: 0 auto 40px;
 }
 
+.section-heading-rule {
+  margin: 20px auto 0;
+  height: 2px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  border-radius: 999px;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

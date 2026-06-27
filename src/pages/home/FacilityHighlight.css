@@ -9,6 +9,13 @@
   }
 }
 
+.facility-illustration-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--color-shadow);
+  background: radial-gradient(ellipse at 40% 35%, #fff8f4, #ede4db);
+}
+
 .facility-copy ul {
   display: flex;
   flex-direction: column;

@@ -80,11 +80,130 @@
   }
 }
 
+.contact-form select {
+  font: inherit;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+  }
+}
+
 .contact-form .btn {
   align-self: flex-start;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  cursor: pointer;
+
+  & input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
 }
 
 .form-success {
   color: var(--color-primary);
   font-weight: 600;
+}
+
+.form-error {
+  font-size: 14px;
+  color: #c0392b;
+}
+
+/* ── LEAFLET MAP ── */
+.location-map {
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px var(--color-shadow);
+}
+
+/* Leaflet popup — match site typography */
+.leaflet-popup-content-wrapper {
+  border-radius: 10px !important;
+  box-shadow: 0 6px 20px rgba(34, 24, 18, 0.14) !important;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.map-popup {
+  padding: 14px 16px;
+  min-width: 200px;
+}
+
+.map-popup strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #211d1b;
+  margin-bottom: 4px;
+}
+
+.map-popup p {
+  font-size: 12px;
+  color: #7d7570;
+  margin: 0 0 12px;
+  line-height: 1.55;
+}
+
+.map-popup-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.map-popup-links a {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: #fdeae0;
+  color: #f06522;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.map-popup-links a:hover {
+  background: #f06522;
+  color: #fff;
 }

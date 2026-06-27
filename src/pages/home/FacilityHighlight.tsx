@@ -1,26 +1,30 @@
 import { CheckCircle } from '../../components/icons'
-import { PlaceholderImage } from '../../components/PlaceholderImage'
+import { LabIllustration } from '../../components/illustrations/LabIllustration'
 import './FacilityHighlight.css'
 
 const POINTS = [
   'Dedicated shade-taking studio for accurate, repeatable color matching',
   'Three times the production space of our previous facility',
-  'On-site training and rest areas for our technician team',
-  'A second lab in Jakarta to support regional case volume',
+  'On-site training and rest areas for our dental technicians',
+  'Direct case consultations — call or WhatsApp us on the same day',
+  'Free remakes if a restoration deviates from your submitted specification',
 ]
 
 export function FacilityHighlight() {
   return (
     <div className="facility">
       <div className="facility-visual">
-        <PlaceholderImage label="Photo: PDCA's shade-taking studio and lab floor" />
+        <div className="facility-illustration-wrap">
+          <LabIllustration />
+        </div>
       </div>
       <div className="facility-copy">
-        <h2>A facility built for precision</h2>
+        <h2>Our Singapore facility, built for precision</h2>
         <p>
-          In 2022 we moved into a facility three times larger than our
-          previous space — purpose-built with a dedicated shade-taking
-          studio and dedicated training facilities for our technicians.
+          In 2022 we moved into a larger Singapore dental lab facility —
+          three times the size of our previous space, purpose-built with a
+          dedicated shade-taking studio and training facilities for our
+          dental technicians.
         </p>
         <ul>
           {POINTS.map((point) => (
