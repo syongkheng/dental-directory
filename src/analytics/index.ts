@@ -1,17 +1,22 @@
+import { currentScreen, type ScreenSize } from './breakpoints'
+
 const BASE_URL = (import.meta.env.VITE_SERVER_BASE_URL as string | undefined) ?? 'http://localhost:3000'
-const ENDPOINT = `${BASE_URL}/api/analytics`
+const ENDPOINT = `${BASE_URL}/analytics/collect`
 
 const SYSTEM = 'dental-directory'
 const SESSION_KEY = 'pdca_analytics_session'
 
+/** Analytics ingest contract v1 — see qindom src/analytics/AnalyticsContract.ts. */
 export interface AnalyticsEvent {
+  v: 1
+  system: string
   event: string
-  properties: Record<string, unknown>
-  timestamp: string
   sessionId: string
+  timestamp: number
   page: string
   referrer: string
-  system: string
+  screen: { width: number; height: number; breakpoint: string; size: ScreenSize }
+  properties: Record<string, unknown>
 }
 
 function getSessionId(): string {
@@ -29,13 +34,15 @@ function getSessionId(): string {
 
 export function track(event: string, properties: Record<string, unknown> = {}): void {
   const payload: AnalyticsEvent = {
+    v: 1,
+    system: SYSTEM,
     event,
-    properties,
-    timestamp: new Date().toISOString(),
     sessionId: getSessionId(),
+    timestamp: Date.now(),
     page: window.location.pathname,
     referrer: document.referrer,
-    system: SYSTEM,
+    screen: currentScreen(),
+    properties,
   }
 
   if (import.meta.env.DEV) {
