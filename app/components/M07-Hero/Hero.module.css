@@ -1,0 +1,56 @@
+.hero {
+  padding-block: clamp(3rem, 9vw, 7rem) clamp(2.5rem, 6vw, 4.5rem);
+  background:
+    radial-gradient(60% 70% at 100% 0%, var(--brand-subtle) 0%, transparent 70%),
+    radial-gradient(40% 50% at 0% 100%, #fff5ef 0%, transparent 70%);
+}
+
+.slim {
+  padding-block: clamp(2.75rem, 7vw, 5rem) clamp(2rem, 5vw, 3.5rem);
+}
+
+.inner {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.withMedia {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+}
+
+.text {
+  max-width: 44rem;
+}
+
+.title {
+  margin-bottom: 1.25rem;
+}
+
+.slim .title {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+}
+
+.lead {
+  max-width: 36em;
+}
+
+.media {
+  min-width: 0;
+}
+
+.image {
+  width: 100%;
+  border-radius: calc(var(--radius) + 4px);
+  object-fit: cover;
+}
+
+.slot {
+  min-height: clamp(14rem, 30vw, 24rem);
+}
+
+@media (max-width: 760px) {
+  .withMedia {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

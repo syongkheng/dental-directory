@@ -1,0 +1,23 @@
+.chip {
+  display: inline-block;
+  background: var(--tbc);
+  color: #1a1a1a;
+  font-size: 0.82em;
+  font-weight: 650;
+  line-height: 1.35;
+  padding: 0.15em 0.55em;
+  border-radius: 6px;
+  border: 1px dashed #1a1a1a;
+}
+
+.photo {
+  display: grid;
+  place-items: center;
+  min-height: 14rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(120% 80% at 20% 10%, var(--brand-subtle) 0%, transparent 60%),
+    linear-gradient(160deg, #efebe9, #e2dcd9);
+  text-align: center;
+}

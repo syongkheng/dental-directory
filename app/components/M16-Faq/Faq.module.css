@@ -1,0 +1,42 @@
+.faq {
+  max-width: 48rem;
+  border-top: 1px solid var(--stone);
+}
+
+.item {
+  border-bottom: 1px solid var(--stone);
+}
+
+.q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 44px;
+  padding: 1.1rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--text-lg);
+  line-height: 1.35;
+  list-style: none;
+}
+
+.q::-webkit-details-marker {
+  display: none;
+}
+
+.chev {
+  flex: none;
+  color: var(--brand);
+  transition: transform 180ms var(--ease);
+}
+
+.item[open] .chev {
+  transform: rotate(180deg);
+}
+
+.a {
+  padding: 0 2.5rem 1.4rem 0;
+  color: var(--ink-soft);
+  max-width: 44em;
+}

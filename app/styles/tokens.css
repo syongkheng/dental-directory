@@ -1,0 +1,39 @@
+/* Design tokens. PDCA will confirm the palette. Light theme only. */
+:root {
+  color-scheme: light;
+
+  /* colour: the PDCA logo palette (orange #f06522 + warm greys), as on the previous site */
+  --paper: #FFFFFF;        /* page background */
+  --surface: #FFFFFF;      /* cards */
+  --sand: #F7F5F4;         /* alternate section bands */
+  --stone: #E2DCD9;        /* borders, dividers */
+  --ink: #211D1B;          /* text */
+  --ink-soft: #6E6661;     /* secondary text (≥4.7:1 on every band) */
+  --brand: #F06522;        /* logo orange: logo, large numerals, rules, icons (not for small text on white) */
+  --brand-text: #E25A1A;   /* logo orange, a touch deeper: large numerals (≥3.3:1 on every band) */
+  --brand-subtle: #FDEAE0; /* soft orange wash */
+  --clay: #C2410C;         /* buttons and links: white text on it passes AA (5.2:1) */
+  --clay-dark: #A63D0B;    /* hover / pressed */
+  --olive: #7D7570;        /* warm grey accent text */
+  --tbc: #FFE14D;        /* development-only TBC chips */
+
+  /* type */
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;                 /* 17 px body; PDCA asked for larger, easy-to-read text */
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.75rem, 3vw, 2.25rem);
+  --text-hero: clamp(2.25rem, 5vw, 3.5rem);
+
+  /* space, shape */
+  --space-section: clamp(3rem, 8vw, 6.5rem);
+  --container: 72rem;
+  --gutter: clamp(1rem, 4vw, 2.75rem);
+  --radius: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgb(42 36 32 / 0.06), 0 8px 24px rgb(42 36 32 / 0.06);
+
+  --header-h: 4.5rem;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

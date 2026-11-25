@@ -1,0 +1,90 @@
+.banner {
+  position: fixed;
+  left: max(0.75rem, env(safe-area-inset-left));
+  bottom: max(0.75rem, env(safe-area-inset-bottom));
+  z-index: 50;
+  width: min(36rem, calc(100% - 1.5rem));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--stone);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 32px rgb(42 36 32 / 0.16);
+  animation: rise 200ms var(--ease) both;
+}
+
+.text {
+  flex: 1 1 15rem;
+  font-size: var(--text-sm);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  min-width: 6.5rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.banner:focus {
+  outline: none;
+}
+
+.banner:focus-visible {
+  outline: 3px solid var(--focus, var(--brand));
+  outline-offset: 2px;
+}
+
+/* Reopened from "Cookie settings": a short orange pulse so it is obvious where it appeared. */
+.reopened {
+  animation:
+    rise 200ms var(--ease) both,
+    pulse 1.2s var(--ease) 200ms 1;
+}
+
+.current {
+  display: block;
+  margin-top: 0.35rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.btn[aria-pressed="true"] {
+  border-color: var(--clay);
+  color: var(--clay);
+  box-shadow: inset 0 0 0 1px var(--clay);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow:
+      0 10px 32px rgb(42 36 32 / 0.16),
+      0 0 0 0 rgb(240 101 34 / 0.55);
+  }
+  100% {
+    box-shadow:
+      0 10px 32px rgb(42 36 32 / 0.16),
+      0 0 0 14px rgb(240 101 34 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reopened {
+    animation: none;
+  }
+}

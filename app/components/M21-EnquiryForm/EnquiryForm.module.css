@@ -1,0 +1,133 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+  max-width: 48rem;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.field input,
+.field textarea {
+  font-size: 16px;
+  min-height: 48px;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--stone);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.field textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--clay-dark);
+}
+
+[aria-invalid="true"] {
+  border-color: #a3291c !important;
+}
+
+.error {
+  color: #a3291c;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.summary {
+  grid-column: 1 / -1;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid #a3291c;
+  background: var(--surface);
+  font-weight: 600;
+}
+
+.check {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.25rem 0.75rem;
+  align-items: start;
+}
+
+.check input {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--clay);
+}
+
+.check .error {
+  grid-column: 2;
+}
+
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.submitRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.note {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+.status:focus {
+  outline: none;
+}
+
+.success,
+.failure {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--stone);
+  max-width: 48rem;
+}
+
+.success {
+  border-left: 4px solid var(--olive);
+  font-weight: 600;
+}
+
+.failure {
+  border-left: 4px solid #a3291c;
+  margin-bottom: 1.5rem;
+}
+
+.fallback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

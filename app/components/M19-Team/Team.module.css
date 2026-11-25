@@ -1,0 +1,15 @@
+.person {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.photo {
+  min-height: 7rem;
+}
+
+.body {
+  display: grid;
+  gap: 0.5rem;
+}

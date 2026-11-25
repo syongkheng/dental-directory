@@ -1,11 +1,15 @@
-import { defineConfig } from 'vite'
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
+import { reactRouter } from "@react-router/dev/vite";
+import { defineConfig } from "vite";
 
-// https://vite.dev/config/
+// The Rx form download is shown in production only once the PDF exists (TBC item).
+const rxFormAvailable = existsSync("public/files/pdca-rx-form.pdf");
+
 export default defineConfig({
-  plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] })
-  ],
-})
+  plugins: [reactRouter()],
+  resolve: { alias: { "~": resolve("app") } },
+  define: {
+    __RX_FORM_AVAILABLE__: JSON.stringify(rxFormAvailable),
+  },
+});
