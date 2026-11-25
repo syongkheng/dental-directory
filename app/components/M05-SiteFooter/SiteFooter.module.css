@@ -1,0 +1,115 @@
+.footer {
+  background: var(--ink);
+  color: #e9e2d8;
+  padding-block: clamp(3rem, 6vw, 4.5rem) 2rem;
+  font-size: var(--text-sm);
+}
+
+.footer a {
+  color: #f4ede4;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer :focus-visible {
+  outline-color: #f4ede4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 650;
+  font-size: var(--text-base);
+  min-height: 44px;
+}
+
+.mark {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.muted {
+  color: #c9bfb2;
+  margin-top: 0.75rem;
+}
+
+.heading {
+  font-size: var(--text-sm);
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #c9bfb2;
+  margin-bottom: 0.75rem;
+}
+
+.spaced {
+  margin-top: 1.75rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list a,
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+}
+
+.linkButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #f4ede4;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.address {
+  font-style: normal;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.address a {
+  display: inline-block;
+  padding-block: 0.3rem;
+}
+
+.fine {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(255 255 255 / 0.14);
+  color: #c9bfb2;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

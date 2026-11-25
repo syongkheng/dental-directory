@@ -1,0 +1,46 @@
+.section {
+  padding-block: var(--space-section);
+  background: var(--paper);
+}
+
+.sand {
+  background: var(--sand);
+}
+
+.narrow {
+  max-width: 52rem;
+}
+
+.title {
+  margin-bottom: 0.6rem;
+}
+
+.lead {
+  margin-bottom: 2.25rem;
+}
+
+.title + :not(.lead) {
+  margin-top: 1.75rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.split > :only-child {
+  grid-column: 1 / -1;
+  max-width: 44rem;
+}
+
+@media (max-width: 760px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reverse > :first-child {
+    order: 2;
+  }
+}

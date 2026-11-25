@@ -1,0 +1,62 @@
+.title {
+  margin-bottom: 1.25rem;
+}
+
+.address {
+  font-style: normal;
+  font-size: var(--text-lg);
+  line-height: 1.5;
+}
+
+.hours {
+  margin-top: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.map {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--stone);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 38px, rgb(101 92 83 / 0.08) 38px 39px),
+    repeating-linear-gradient(90deg, transparent 0 38px, rgb(101 92 83 / 0.08) 38px 39px),
+    linear-gradient(160deg, #efe7dc, #e2d7c8);
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+.placeholder p {
+  max-width: 22rem;
+}
+
+.pin {
+  color: var(--brand);
+}

@@ -1,0 +1,24 @@
+.openings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.opening {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--stone);
+  border-radius: var(--radius);
+}
+
+.apply {
+  margin-top: 1.5rem;
+  font-weight: 500;
+}

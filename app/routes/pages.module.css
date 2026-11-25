@@ -1,0 +1,97 @@
+/* Small page-level helpers shared by route components. */
+.aside {
+  margin-top: 1.5rem;
+  color: var(--ink-soft);
+}
+
+.h2 {
+  margin-bottom: 0.75rem;
+}
+
+.pageHead {
+  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.pageHead h1 {
+  font-size: clamp(2.25rem, 4.6vw, 3.25rem);
+  margin-bottom: 1rem;
+}
+
+.innav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.innav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--stone);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.innav a:hover {
+  border-color: var(--clay);
+  color: var(--clay-dark);
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.twoCol h2 {
+  margin-bottom: 0.75rem;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.note {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--brand);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.stack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.ctaBand {
+  text-align: left;
+}
+
+.notFound {
+  padding-block: clamp(4rem, 12vw, 8rem);
+}
+
+.notFound ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .twoCol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
