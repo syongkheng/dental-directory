@@ -1,6 +1,8 @@
 // Post-build: writes sitemap.xml (public, enabled routes only) and robots.txt into build/client,
-// checks every pre-rendered route has its own HTML file, and warns with the TBC count.
-import { existsSync, writeFileSync } from "node:fs";
+// copies the SPA fallback to 404.html (static hosts such as Vercel serve it with a 404 status for
+// unknown paths, and the router then renders the Not found page), checks every pre-rendered route
+// has its own HTML file, and warns with the TBC count.
+import { copyFileSync, existsSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { nodeEnv } from "../app/config/node-env";
 import { prerenderPaths, sitemapPaths } from "../app/config/paths";
@@ -23,6 +25,8 @@ writeFileSync(
 // /insights is deliberately not mentioned here (listing it would advertise it).
 writeFileSync(join(OUT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${site}/sitemap.xml\n`);
 
+copyFileSync(join(OUT, "__spa-fallback.html"), join(OUT, "404.html"));
+
 const missing = prerenderPaths().filter((p) => {
   const file = p === "/" ? join(OUT, "index.html") : join(OUT, p.slice(1), "index.html");
   return !existsSync(file);
@@ -33,7 +37,7 @@ if (missing.length) {
 }
 
 const tbc = scanTbc();
-console.log(`postbuild: wrote sitemap.xml (${sitemapPaths().length} URLs) and robots.txt`);
+console.log(`postbuild: wrote sitemap.xml (${sitemapPaths().length} URLs) robots.txt and 404.html`);
 if (tbc.length) {
   console.warn(`\x1b[33mpostbuild warning: ${tbc.length} TBC items still open (run \`npm run tbc\` for the list)\x1b[0m`);
 }

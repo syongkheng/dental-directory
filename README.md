@@ -50,10 +50,9 @@ All copy and facts live in `app/content/`. **CONTENT.md** explains, for a non-de
 ## Deployment
 
 - Deploy `build/client` as a static site. No server adapter is needed.
-- React Router writes the client fallback to `build/client/__spa-fallback.html`. Configure the host to serve it **only for paths with no matching file**:
-  - Netlify `_redirects`: `/*  /__spa-fallback.html  200`
-  - Vercel `vercel.json`: `{ "rewrites": [{ "source": "/(.*)", "destination": "/__spa-fallback.html" }] }`. Vercel serves real files before rewrites.
-  - After deploying, check that `/services`, `/about` and the other routes are still served as their own pre-rendered files: view the source and look at `<title>`.
+- **Vercel:** `vercel.json` sets the output directory to `build/client` (Vercel's Vite preset otherwise looks for `dist` and fails with `STATIC_BUILD_NO_OUT_DIR`), runs `npm run build`, and drops trailing slashes so URLs match the canonical tags. In the Vercel project settings, leave Build Command and Output Directory on their defaults so `vercel.json` applies, and add the `VITE_*` variables for Production.
+- Unknown paths: `postbuild` copies React Router's `__spa-fallback.html` to `404.html`. Vercel (and most static hosts) serve it with a real 404 status, and the router renders the Not found page. No rewrite is needed. Netlify picks up `404.html` the same way. On a host that needs an explicit rule, serve `/404.html` with status 404 for paths with no matching file.
+- After deploying, check that `/services`, `/about` and the other routes are served as their own pre-rendered files (view the source and look at `<title>`), and that `/does-not-exist` returns 404.
 - The hosting account, domain and files belong to the company. Vercel's free Hobby plan is for non-commercial use only, so use Vercel Pro or another static host that allows commercial use.
 - If the enquiry form or tracking is on, add the production origin (for example `https://pdcadental.com`) to the `dental-directory` row's `allowed_origins` in qindom (fndom `/admin/analytics-access`).
 
